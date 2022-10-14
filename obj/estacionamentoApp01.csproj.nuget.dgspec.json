@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\Hibrael\\Estacionamento_Windows-forms\\estacionamentoApp01\\estacionamentoApp01.csproj": {}
+    "C:\\Users\\hibrael.xavier\\Source\\Repos\\Hibrael\\EstacionamentoApp01\\estacionamentoApp01.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\Hibrael\\Estacionamento_Windows-forms\\estacionamentoApp01\\estacionamentoApp01.csproj": {
+    "C:\\Users\\hibrael.xavier\\Source\\Repos\\Hibrael\\EstacionamentoApp01\\estacionamentoApp01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\Hibrael\\Estacionamento_Windows-forms\\estacionamentoApp01\\estacionamentoApp01.csproj",
+        "projectUniqueName": "C:\\Users\\hibrael.xavier\\Source\\Repos\\Hibrael\\EstacionamentoApp01\\estacionamentoApp01.csproj",
         "projectName": "estacionamentoApp01",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\Hibrael\\Estacionamento_Windows-forms\\estacionamentoApp01\\estacionamentoApp01.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\Hibrael\\Estacionamento_Windows-forms\\estacionamentoApp01\\obj\\",
+        "projectPath": "C:\\Users\\hibrael.xavier\\Source\\Repos\\Hibrael\\EstacionamentoApp01\\estacionamentoApp01.csproj",
+        "packagesPath": "C:\\Users\\hibrael.xavier\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hibrael.xavier\\Source\\Repos\\Hibrael\\EstacionamentoApp01\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hibrael.xavier\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,6 +43,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.31, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

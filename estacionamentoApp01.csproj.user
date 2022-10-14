@@ -4,6 +4,9 @@
     <Compile Update="Adicionar_Veiculo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="busca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
