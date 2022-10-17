@@ -21,8 +21,6 @@ namespace estacionamentoApp01
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var Adicionar_Veiculo = new Adicionar_Veiculo();
-            Adicionar_Veiculo.Show();
 
         }
 
@@ -37,10 +35,7 @@ namespace estacionamentoApp01
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
