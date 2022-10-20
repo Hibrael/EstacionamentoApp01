@@ -1,7 +1,10 @@
-﻿create table tipo_Veiculo
+﻿create database Estacionamento;
+use Estacionamento;
+
+create table tipo_Veiculo
 (
-    id_tipo int primary key not null,
-    desc varchar (10)
+    id_tipo int not null,
+    descrição varchar (10)
 );
 
 create table Veiculo 
@@ -14,3 +17,7 @@ create table Veiculo
     Hora_Saida datetime,
     tipo_id int not null
 );
+ alter table tipo_Veiculo add constraint primary key (id_tipo);
+ 
+ 
+Alter table veiculo add constraint fk_veiculo_tipo foreign key (tipo_id) references tipo_veiculo (id_tipo) on delete no action on update cascade 
