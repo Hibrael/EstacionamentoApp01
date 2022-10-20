@@ -55,5 +55,14 @@ namespace estacionamentoApp01
         {
 
         }
+
+        private void link1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            var Info = new Info();
+            Info.Show();
+
+        
+        }
     }
 }

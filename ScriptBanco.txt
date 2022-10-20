@@ -1,0 +1,16 @@
+﻿create table tipo_Veiculo
+(
+    id_tipo int primary key not null,
+    desc varchar (10)
+);
+
+create table Veiculo 
+(
+	Veiculo_id int auto_increment not null primary key, 
+	Nome varchar(25) not null, 
+    Placa varchar(9)  not null unique,
+    Modelo varchar(20) not null,
+    Hora_entrada datetime not null,
+    Hora_Saida datetime,
+    tipo_id int not null
+);

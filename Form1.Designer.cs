@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.link1 = new System.Windows.Forms.LinkLabel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.link1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
@@ -53,6 +55,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loign";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // link1
+            // 
+            this.link1.AutoSize = true;
+            this.link1.Location = new System.Drawing.Point(339, 10);
+            this.link1.Name = "link1";
+            this.link1.Size = new System.Drawing.Size(37, 15);
+            this.link1.TabIndex = 6;
+            this.link1.TabStop = true;
+            this.link1.Text = "Sobre";
+            this.link1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link1_LinkClicked);
             // 
             // textBox2
             // 
@@ -135,5 +148,6 @@
         private Label label1;
         private Button button2;
         private Button button1;
+        private LinkLabel link1;
     }
 }
