@@ -16,7 +16,6 @@ C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionament
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.pdb
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.genruntimeconfig.cache
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\ref\estacionamentoApp01.dll
-C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.Adicionar_Veiculo.resources
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.Properties.Resources.resources
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\bin\Debug\net6.0-windows\Google.Protobuf.dll
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
@@ -43,3 +42,4 @@ C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionament
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\bin\Debug\net6.0-windows\MySql.Data.EntityFrameworkCore.dll
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.csproj.CopyComplete
+C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.Saida.resources

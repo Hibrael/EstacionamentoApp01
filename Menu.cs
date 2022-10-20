@@ -82,13 +82,14 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
-                strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, Hora_entrada) values (@Nome, @Placa, @Modelo, @Hora_entrada)";
+                strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, Hora_entrada, Hora_saida, tipo) values (@Nome, @Placa, @Modelo, @Hora_entrada, @Hora_Saida)";
 
                 comando = new MySqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@Nome", txtNome.Text);
                 comando.Parameters.AddWithValue("@Placa", txtPlaca.Text);
                 comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
                 comando.Parameters.AddWithValue("@Hora_entrada", DateTime.Now);
+                comando.Parameters.AddWithValue("@Hora_Saida", null);
 
                 conexao.Open();
 
@@ -127,13 +128,14 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
-                strSQL = "UPDATE VEICULO SET NOME = @Nome, PLaca = @Placa, Modelo = @Modelo WHERE VEICULO_ID = @ID";
+                strSQL = "UPDATE VEICULO SET NOME = @Nome, PLaca = @Placa, Modelo = @Modelo  WHERE VEICULO_ID = @ID";
 
                 comando = new MySqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@ID", txtID.Text);
                 comando.Parameters.AddWithValue("@Nome", txtNome.Text);
                 comando.Parameters.AddWithValue("@Placa", txtPlaca.Text);
                 comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
+               
 
                 conexao.Open();
 
@@ -226,6 +228,14 @@ namespace estacionamentoApp01
                 conexao = null;
                 comando = null;
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var Saida = new Saida();
+            Saida.Show();
+            conexao = null;
+            comando = null;
         }
     }
 }
