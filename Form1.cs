@@ -2,13 +2,17 @@ namespace estacionamentoApp01
 {
     public partial class Form1 : Form
     {
+        public VeiculoDAO VeiculoDAO { get; set; }
         public Form1()
         {
             InitializeComponent();
+            VeiculoDAO = new VeiculoDAO();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            VeiculoDAO.Add();
+
             try
             {
                 if (textBox1.Text.Equals("Hibrael") && textBox2.Text.Equals("1231"))

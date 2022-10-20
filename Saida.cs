@@ -15,7 +15,7 @@ namespace estacionamentoApp01
 {
     public partial class Saida : Form
     {
-        MySqlConnection conexao;
+        MySqlConnection conexao = BaseDAO.conexao;
         MySqlCommand comando;
         MySqlDataAdapter da;
         MySqlDataReader dr;
@@ -33,7 +33,7 @@ namespace estacionamentoApp01
             DateTime Hora_entrada;
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+                
 
                 strSQL = "SELECT *, round(TIMESTAMPDIFF(minute, hora_saida, hora_entrada) / 60) as Tempo FROM VEICULO WHERE VEICULO_ID = @ID ";
 
@@ -86,7 +86,7 @@ namespace estacionamentoApp01
         {
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+                
                 conexao = new MySqlConnection("");
                 strSQL = "UPDATE VEICULO SET Hora_Saida = @Hora_Saida WHERE VEICULO_ID = @ID";
 

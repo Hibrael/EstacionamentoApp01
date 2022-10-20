@@ -17,7 +17,7 @@ namespace estacionamentoApp01
 {
     public partial class Menu : Form
     {
-        MySqlConnection conexao;
+        MySqlConnection conexao = BaseDAO.conexao;
         MySqlCommand comando;
         MySqlDataAdapter da;
         MySqlDataReader dr;
@@ -42,7 +42,7 @@ namespace estacionamentoApp01
         {
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+                
 
                 strSQL = "DELETE FROM VEICULO WHERE VEICULO_ID = @ID";
 
@@ -80,8 +80,7 @@ namespace estacionamentoApp01
         {
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
-
+                
                 strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, Hora_entrada, Hora_saida, tipo) values (@Nome, @Placa, @Modelo, @Hora_entrada, @Hora_Saida)";
 
                 comando = new MySqlCommand(strSQL, conexao);
@@ -126,7 +125,7 @@ namespace estacionamentoApp01
         {
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+                
 
                 strSQL = "UPDATE VEICULO SET NOME = @Nome, PLaca = @Placa, Modelo = @Modelo  WHERE VEICULO_ID = @ID";
 
@@ -168,7 +167,7 @@ namespace estacionamentoApp01
         {
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+                
 
                 strSQL = "SELECT * FROM VEICULO WHERE VEICULO_ID = @ID";
 
@@ -204,7 +203,7 @@ namespace estacionamentoApp01
         {
             try
             {
-                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+                
 
                 strSQL = "SELECT * FROM VEICULO";
 
