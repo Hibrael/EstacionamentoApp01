@@ -6,3 +6,5 @@ bin/Debug/net6.0-windows/
 *.cache
 
 obj/Debug/net6.0-windows/
+
+*.v2
