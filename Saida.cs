@@ -15,7 +15,7 @@ namespace estacionamentoApp01
 {
     public partial class Saida : Form
     {
-        MySqlConnection conexao;
+        MySqlConnection conexao = Banco.ConexaoBanco();
         MySqlCommand comando;
         MySqlDataAdapter da;
         MySqlDataReader dr;
@@ -35,7 +35,7 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
-                strSQL = "SELECT *, round(TIMESTAMPDIFF(minute, hora_saida, hora_entrada) / 60) as Tempo FROM VEICULO WHERE VEICULO_ID = @ID ";
+                strSQL = "SELECT *, round(TIMESTAMPDIFF(minute,hora_entrada, now())) as Tempo FROM VEICULO WHERE VEICULO_ID = @ID";
 
                 comando = new MySqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@ID", txtID.Text);
@@ -52,8 +52,7 @@ namespace estacionamentoApp01
                     label3.Text = Convert.ToString(dr["Placa"]);
                     label4.Text = Convert.ToString(dr["Modelo"]);
                     label5.Text = Convert.ToString(dr["Hora_entrada"]);
-                    label5.Text = Convert.ToString(dr["total"]);
-                    
+                    label6.Text = Convert.ToString(dr["tempo"] + "MIN");
                     Hora_entrada = Convert.ToDateTime(dr["Hora_entrada"]);
                 }
 
@@ -87,7 +86,7 @@ namespace estacionamentoApp01
             try
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
-                conexao = new MySqlConnection("");
+                //Banco.ConexaoBanco();
                 strSQL = "UPDATE VEICULO SET Hora_Saida = @Hora_Saida WHERE VEICULO_ID = @ID";
 
                 comando = new MySqlCommand(strSQL, conexao);

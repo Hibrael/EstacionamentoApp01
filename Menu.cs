@@ -17,7 +17,7 @@ namespace estacionamentoApp01
 {
     public partial class Menu : Form
     {
-        MySqlConnection conexao;
+        MySqlConnection conexao = Banco.ConexaoBanco();
         MySqlCommand comando;
         MySqlDataAdapter da;
         MySqlDataReader dr;
@@ -82,13 +82,15 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
-                strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, Hora_entrada, Hora_saida, tipo) values (@Nome, @Placa, @Modelo, @Hora_entrada, @Hora_Saida)";
+                strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, hora_entrada, hora_saida, tipo_id) " +
+                    "values (@Nome, @Placa, @Modelo, @hora_entrada, @hora_saida, @tipo_id)";
 
                 comando = new MySqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@Nome", txtNome.Text);
                 comando.Parameters.AddWithValue("@Placa", txtPlaca.Text);
                 comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
-                comando.Parameters.AddWithValue("@Hora_entrada", DateTime.Now);
+                comando.Parameters.AddWithValue("@tipo_id", txtTipo.Text);
+                comando.Parameters.AddWithValue("@hora_entrada", DateTime.Now); 
                 comando.Parameters.AddWithValue("@Hora_Saida", null);
 
                 conexao.Open();
@@ -206,7 +208,7 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
-                strSQL = "SELECT * FROM VEICULO";
+                strSQL = "SELECT veiculo_id, Nome, Placa, Modelo, descrição as Tipo, hora_entrada, Hora_saida FROM veiculo INNER JOIN tipo_veiculo ON id_tipo = tipo_id";
 
                 da = new MySqlDataAdapter(strSQL, conexao);
 
