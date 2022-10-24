@@ -45,7 +45,7 @@
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 28);
             this.label1.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(100, 25);
+            this.txtNome.Location = new System.Drawing.Point(100, 26);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(151, 23);
             this.txtNome.TabIndex = 3;
@@ -104,9 +104,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(100, 168);
+            this.button1.Location = new System.Drawing.Point(14, 170);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 35);
+            this.button1.Size = new System.Drawing.Size(96, 32);
             this.button1.TabIndex = 6;
             this.button1.Text = "Novo";
             this.button1.UseVisualStyleBackColor = true;
@@ -115,9 +115,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(216, 169);
+            this.button2.Location = new System.Drawing.Point(294, 170);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 34);
+            this.button2.Size = new System.Drawing.Size(96, 32);
             this.button2.TabIndex = 7;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,9 +126,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(330, 169);
+            this.button3.Location = new System.Drawing.Point(430, 170);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 34);
+            this.button3.Size = new System.Drawing.Size(96, 32);
             this.button3.TabIndex = 8;
             this.button3.Text = "Excluir";
             this.button3.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(447, 168);
+            this.button4.Location = new System.Drawing.Point(574, 170);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 35);
+            this.button4.Size = new System.Drawing.Size(96, 32);
             this.button4.TabIndex = 9;
             this.button4.Text = "Consultar";
             this.button4.UseVisualStyleBackColor = true;
@@ -148,9 +148,9 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(560, 168);
+            this.button5.Location = new System.Drawing.Point(150, 170);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 35);
+            this.button5.Size = new System.Drawing.Size(96, 32);
             this.button5.TabIndex = 10;
             this.button5.Text = "Exibir";
             this.button5.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(266, 20);
+            this.label4.Location = new System.Drawing.Point(266, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 28);
             this.label4.TabIndex = 14;
@@ -178,7 +178,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(307, 25);
+            this.txtID.Location = new System.Drawing.Point(307, 26);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(151, 23);
             this.txtID.TabIndex = 15;
@@ -186,16 +186,16 @@
             // dgvDados
             // 
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDados.Location = new System.Drawing.Point(100, 222);
+            this.dgvDados.Location = new System.Drawing.Point(12, 217);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.RowTemplate.Height = 25;
-            this.dgvDados.Size = new System.Drawing.Size(566, 230);
+            this.dgvDados.Size = new System.Drawing.Size(752, 230);
             this.dgvDados.TabIndex = 16;
             // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(645, 46);
+            this.button7.Location = new System.Drawing.Point(645, 43);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(119, 35);
             this.button7.TabIndex = 17;
@@ -213,19 +213,19 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Tipo";
             // 
-            // textBox1
+            // txtTipo
             // 
-            this.textBox1.Location = new System.Drawing.Point(307, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 23);
-            this.textBox1.TabIndex = 19;
+            this.txtTipo.Location = new System.Drawing.Point(307, 78);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(151, 23);
+            this.txtTipo.TabIndex = 19;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 475);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(773, 463);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.dgvDados);
@@ -273,6 +273,6 @@
         private DataGridView dgvDados;
         private Button button7;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtTipo;
     }
 }

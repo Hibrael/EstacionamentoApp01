@@ -43,3 +43,4 @@ C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionament
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.csproj.CopyComplete
 C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.Saida.resources
+C:\Users\Usuario\source\repos\Hibrael\Estacionamento_Windows-forms\estacionamentoApp01\obj\Debug\net6.0-windows\estacionamentoApp01.Info.resources

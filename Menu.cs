@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace estacionamentoApp01
 {
     public partial class Menu : Form
     {
-        MySqlConnection conexao = Banco.ConexaoBanco();
+        MySqlConnection conexao = Banco.BaseDAO.conexao;
         MySqlCommand comando;
         MySqlDataAdapter da;
         MySqlDataReader dr;
@@ -92,7 +93,7 @@ namespace estacionamentoApp01
                 comando.Parameters.AddWithValue("@tipo_id", txtTipo.Text);
                 comando.Parameters.AddWithValue("@hora_entrada", DateTime.Now); 
                 comando.Parameters.AddWithValue("@Hora_Saida", null);
-
+                
                 conexao.Open();
 
                 comando.ExecuteNonQuery();
@@ -128,6 +129,9 @@ namespace estacionamentoApp01
         {
             try
             {
+                //MessageBox.Show("Confirmar alterações", "Tem certeza?", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
                 strSQL = "UPDATE VEICULO SET NOME = @Nome, PLaca = @Placa, Modelo = @Modelo  WHERE VEICULO_ID = @ID";

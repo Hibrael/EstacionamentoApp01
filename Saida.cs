@@ -15,7 +15,7 @@ namespace estacionamentoApp01
 {
     public partial class Saida : Form
     {
-        MySqlConnection conexao = Banco.ConexaoBanco();
+        MySqlConnection conexao = Banco.BaseDAO.conexao;
         MySqlCommand comando;
         MySqlDataAdapter da;
         MySqlDataReader dr;
@@ -48,11 +48,11 @@ namespace estacionamentoApp01
 
                 while (dr.Read())
                 {
-                    label2.Text = Convert.ToString(dr["Nome"]);
-                    label3.Text = Convert.ToString(dr["Placa"]);
-                    label4.Text = Convert.ToString(dr["Modelo"]);
-                    label5.Text = Convert.ToString(dr["Hora_entrada"]);
-                    label6.Text = Convert.ToString(dr["tempo"] + "MIN");
+                    textBox1.Text = Convert.ToString(dr["Nome"]);
+                    textBox3.Text = Convert.ToString(dr["Placa"]);
+                    textBox4.Text = Convert.ToString(dr["Modelo"]);
+                    textBox5.Text = Convert.ToString(dr["Hora_entrada"]);
+                    textBox6.Text = Convert.ToString(dr["tempo"] + "MIN");
                     Hora_entrada = Convert.ToDateTime(dr["Hora_entrada"]);
                 }
 
@@ -97,6 +97,15 @@ namespace estacionamentoApp01
 
                 comando.ExecuteNonQuery();
 
+                //var tempo = strSQL = "SELECT round(TIMESTAMPDIFF(minute,hora_entrada, now())) as Tempo FROM VEICULO WHERE VEICULO_ID = @ID";
+                //var tipo = strSQL = "select tipo_id from veiculo where Veiculo_id = 2";
+
+                //Convert.ToInt32(tempo);
+               // Convert.ToInt32(tipo);
+
+                //Metodos.CalcularValor(tempo, tipo);
+                
+
                 
 
 
@@ -119,6 +128,15 @@ namespace estacionamentoApp01
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

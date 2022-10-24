@@ -5,6 +5,7 @@ namespace estacionamentoApp01
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +55,21 @@ namespace estacionamentoApp01
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var Info = new Info();
+            Info.Show();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
