@@ -22,7 +22,7 @@ namespace estacionamentoApp01
                 if (tempo <= 120)
                 {
                     valor = + 2;
-                    if (tempo > 120);
+                    if (tempo > 120)
                     valor = 7.00;
                 }
 

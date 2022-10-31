@@ -1,8 +1,10 @@
+using estacionamentoApp01.Modelo;
+
 namespace estacionamentoApp01
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
 
@@ -10,11 +12,35 @@ namespace estacionamentoApp01
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            /*
+            Controle controle = new Controle();
+            controle.Acessar(textBox1.Text, textBox2.Text);
+            if (controle.mensagem.Equals(""))
+            {
+                if (controle.tem)
+                {
+                    MessageBox.Show("Logado com Sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var Menu = new Menu();
+                    Menu.Show();
+
+                    this.Visible = false;
+
+                }
+                else
+                {
+                    MessageBox.Show("Verifique suas credenciais", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }else
+            {
+                MessageBox.Show(controle.mensagem);
+            }
+            */
+
             try
             {
                 if (textBox1.Text.Equals("Hibrael") && textBox2.Text.Equals("1231"))
                 {
-                    // ir para menu
                     var Menu = new Menu();
                     Menu.Show();
 
@@ -40,11 +66,12 @@ namespace estacionamentoApp01
                     MessageBoxButtons.OK
                     , MessageBoxIcon.Error);
             }
-        }
+            
+        } 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -62,6 +62,8 @@ namespace estacionamentoApp01
                 txtNome.Text = "";
                 txtModelo.Text = "";
                 txtPlaca.Text = "";
+                txtID.Text = "";
+                txtTipo.Text = "";
 
 
             }
@@ -83,17 +85,19 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
 
-                strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, hora_entrada, hora_saida, tipo_id) " +
-                    "values (@Nome, @Placa, @Modelo, @hora_entrada, @hora_saida, @tipo_id)";
+                strSQL = "INSERT INTO VEICULO (Nome, Placa, Modelo, hora_entrada, hora_saida, tipo_id, tempo_total) " +
+                    "values (@Nome, @Placa, @Modelo, @hora_entrada, @hora_saida, @tipo_id, @tempo_total)";
 
                 comando = new MySqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@Nome", txtNome.Text);
                 comando.Parameters.AddWithValue("@Placa", txtPlaca.Text);
                 comando.Parameters.AddWithValue("@Modelo", txtModelo.Text);
                 comando.Parameters.AddWithValue("@tipo_id", txtTipo.Text);
-                comando.Parameters.AddWithValue("@hora_entrada", DateTime.Now); 
+                comando.Parameters.AddWithValue("@hora_entrada", DateTime.Now);
                 comando.Parameters.AddWithValue("@Hora_Saida", null);
-                
+                comando.Parameters.AddWithValue("@Tempo_total", 0);
+
+
                 conexao.Open();
 
                 comando.ExecuteNonQuery();
@@ -106,6 +110,8 @@ namespace estacionamentoApp01
                 txtNome.Text = "";
                 txtModelo.Text = "";
                 txtPlaca.Text = "";
+                txtTipo.Text = "";
+                txtID.Text = "";
 
             }
             catch (Exception ex)
@@ -242,6 +248,107 @@ namespace estacionamentoApp01
             Saida.Show();
             conexao = null;
             comando = null;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void exibir1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void exibir2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+
+                strSQL = "SELECT veiculo_id, Nome, Placa, Modelo, descrição as Tipo, hora_entrada, Hora_saida FROM veiculo INNER JOIN tipo_veiculo ON id_tipo = tipo_id where tempo_total = 0";
+
+                da = new MySqlDataAdapter(strSQL, conexao);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                dgvDados.DataSource = dt;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+                conexao = null;
+                comando = null;
+            }
+        }
+
+        private void exibirSaídasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+
+                strSQL = "SELECT veiculo_id, Nome, Placa, Modelo, descrição as Tipo, hora_entrada, Hora_saida, tempo_total FROM veiculo INNER JOIN tipo_veiculo ON id_tipo = tipo_id where tempo_total != 0";
+
+                da = new MySqlDataAdapter(strSQL, conexao);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                dgvDados.DataSource = dt;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+                conexao = null;
+                comando = null;
+            }
+        }
+
+        private void exibirTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
+
+                strSQL = "SELECT veiculo_id, Nome, Placa, Modelo, descrição as Tipo, hora_entrada, Hora_saida, tempo_total FROM veiculo INNER JOIN tipo_veiculo ON id_tipo = tipo_id";
+
+                da = new MySqlDataAdapter(strSQL, conexao);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                dgvDados.DataSource = dt;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+                conexao = null;
+                comando = null;
+            }
         }
     }
 }

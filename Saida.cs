@@ -17,9 +17,8 @@ namespace estacionamentoApp01
     {
         MySqlConnection conexao = Banco.BaseDAO.conexao;
         MySqlCommand comando;
-        MySqlDataAdapter da;
         MySqlDataReader dr;
-        string strSQL;
+        string strSQL = "";
         public Saida()
         {
             InitializeComponent();
@@ -27,9 +26,6 @@ namespace estacionamentoApp01
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string placa = "";
-            string modelo;
-            string Nome;
             DateTime Hora_entrada;
             try
             {
@@ -52,7 +48,7 @@ namespace estacionamentoApp01
                     textBox3.Text = Convert.ToString(dr["Placa"]);
                     textBox4.Text = Convert.ToString(dr["Modelo"]);
                     textBox5.Text = Convert.ToString(dr["Hora_entrada"]);
-                    textBox6.Text = Convert.ToString(dr["tempo"] + "MIN");
+                    textBox6.Text = Convert.ToString(dr["tempo"]);
                     Hora_entrada = Convert.ToDateTime(dr["Hora_entrada"]);
                 }
 
@@ -87,10 +83,11 @@ namespace estacionamentoApp01
             {
                 conexao = new MySqlConnection("Server=localhost;Database=estacionamento_db;User Id=root;Password=mysql123!;");
                 //Banco.ConexaoBanco();
-                strSQL = "UPDATE VEICULO SET Hora_Saida = @Hora_Saida WHERE VEICULO_ID = @ID";
+                strSQL = "UPDATE VEICULO SET Hora_Saida = @Hora_Saida, Tempo_total = @tempo_total WHERE VEICULO_ID = @ID";
 
                 comando = new MySqlCommand(strSQL, conexao);
                 comando.Parameters.AddWithValue("@ID", txtID.Text);
+                comando.Parameters.AddWithValue("@Tempo_total", textBox6.Text);
                 comando.Parameters.AddWithValue("@Hora_Saida", DateTime.Now);
 
                 conexao.Open();
